@@ -17,6 +17,25 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.WindowManager;
 
+/**
+ * Code created by the Game Developers Guild. Any derivative work must contain 
+ * a copy of the source code and this comments. 
+ * 
+ * It would be nice if you add the official GDG splash to derivative work but not 
+ * required.
+ * 
+ * 
+ * Code Licensed under CC Attribution 3.0 Unported as found on this 
+ * page: http://creativecommons.org/licenses/by/3.0/legalcode  
+ * 
+ * 
+ * @author Game Developers Guild
+ * Site: www.GameDevelopersGuild.com
+ * Twitter: @GameDevGuild
+ * Facebook: www.facebook.com/GameDevelopersGuild
+ * Facebook: www.facebook.com/GameLoopMagazine
+ */
+
 public class MainView extends SurfaceView implements SurfaceHolder.Callback 
 {
 
@@ -56,11 +75,7 @@ public class MainView extends SurfaceView implements SurfaceHolder.Callback
 		DisplayMetrics metrics = new DisplayMetrics();
 		display.getMetrics(metrics);
 		
-		//density = metrics.density;
 		
-		// Set the preferred screen size for the app.
-		//ScreenSizeManager.getInstance().setPrefferedScreenSize(640, 427);
-
 		
 		this.context = context;
 		game = new Game(context);			
@@ -74,7 +89,6 @@ public class MainView extends SurfaceView implements SurfaceHolder.Callback
 	public void surfaceChanged(SurfaceHolder holder, int format, int width,
 			int height) 
 	{
-		//Log.d("TAG_KP", "Surface Changed : "+ width +"," +height);
 		if(thread != null)
 		{	
 			if(height > width)
@@ -94,7 +108,6 @@ public class MainView extends SurfaceView implements SurfaceHolder.Callback
 		//SensorHandler.getInstance().initialize();
 		viewIsCreated = true;
 		startThread();
-		//Log.d("TAG_KP", "Surface Created");
 		
 	}
 	
@@ -104,9 +117,7 @@ public class MainView extends SurfaceView implements SurfaceHolder.Callback
 		stopThread();
 		viewIsCreated = false;
 		
-		//holder = getHolder();
-		//holder.removeCallback(this);
-	
+		
 	}
 	
 	public void startThread()
@@ -119,7 +130,6 @@ public class MainView extends SurfaceView implements SurfaceHolder.Callback
 	}
 	public void stopThread()
 	{
-		//Log.d("TAG_KP", "Stoping Thread Destroyed");
 		
 		if(thread == null)
 			return; 
@@ -158,12 +168,10 @@ public class MainView extends SurfaceView implements SurfaceHolder.Callback
 	
 	public GameThread getThread() 
 	{
-		//Log.d("TAG_KP", "Get Thread");
-
+		
 		if (thread == null) 
 		{
-			//Log.d("TAG_KP", "Creating New Thread");
-
+		
 			thread = new GameThread(holder, context, game);
 		}
 		return thread;

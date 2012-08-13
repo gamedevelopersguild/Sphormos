@@ -1,6 +1,25 @@
 package utils.game.tools.main;
 
 
+/**
+ * Code created by the Game Developers Guild. Any derivative work must contain 
+ * a copy of the source code and this comments. 
+ * 
+ * It would be nice if you add the official GDG splash to derivative work but not 
+ * required.
+ * 
+ * 
+ * Code Licensed under CC Attribution 3.0 Unported as found on this 
+ * page: http://creativecommons.org/licenses/by/3.0/legalcode  
+ * 
+ * 
+ * @author Game Developers Guild
+ * Site: www.GameDevelopersGuild.com
+ * Twitter: @GameDevGuild
+ * Facebook: www.facebook.com/GameDevelopersGuild
+ * Facebook: www.facebook.com/GameLoopMagazine
+ */
+
 /***
  * This class handles the generation of 
  * positions and sizes for the different screen sizes 
@@ -8,8 +27,6 @@ package utils.game.tools.main;
  * 
  * Helper Class.
  * 
- * @author Frank Hernandez
- * Date: 03/06/2012
  *
  */
 public class ScreenSizeManager 

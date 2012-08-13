@@ -16,6 +16,25 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.Log;
 
+/**
+ * Code created by the Game Developers Guild. Any derivative work must contain 
+ * a copy of the source code and this comments. 
+ * 
+ * It would be nice if you add the official GDG splash to derivative work but not 
+ * required.
+ * 
+ * 
+ * Code Licensed under CC Attribution 3.0 Unported as found on this 
+ * page: http://creativecommons.org/licenses/by/3.0/legalcode  
+ * 
+ * 
+ * @author Game Developers Guild
+ * Site: www.GameDevelopersGuild.com
+ * Twitter: @GameDevGuild
+ * Facebook: www.facebook.com/GameDevelopersGuild
+ * Facebook: www.facebook.com/GameLoopMagazine
+ */
+
 public class BitmapContainer 
 {
 	private static BitmapContainer m_Instance = null;
@@ -23,16 +42,10 @@ public class BitmapContainer
 	private Bitmap m_splashScreen = null;
 	private Bitmap m_gameLogo = null;
 	private Bitmap m_gameStartMenu = null;
-	private Bitmap m_levelBackgroundSky = null;
-	private Bitmap m_levelBackgroundGround = null;
 	private Bitmap m_bmpMenuImage = null;
 	private Bitmap m_bmpCreditsImage = null;
 	
 	private Bitmap m_bmpLevelPickImage = null;
-	
-	// Player Sprites
-	private Bitmap[] m_bmpCreatureStages;
-	private int MAX_CREATURE_STAGES = 7;
 	
 	private Bitmap[] m_bmpExpBar;
 	private int MAX_EXP_SPRITES = 2;
@@ -92,16 +105,16 @@ public class BitmapContainer
 
 		m_splashScreen = loadBitmap(assetManager, "gdg_low_res.png");
 		
-		m_levelBackgroundSky = loadBitmap(assetManager, "sky_morning.png");
 		
-		// Set the preferred screen size to the same as the background, after all this image
-		// should be the same size as the desired screen.
-		ScreenSizeManager.getInstance().setPrefferedScreenSize(m_levelBackgroundSky.getWidth(), 
-				m_levelBackgroundSky.getHeight());
-
+		
 		m_bmpMenuImage = loadBitmap(assetManager, "main_menu.png");
 		m_bmpCreditsImage = loadBitmap(assetManager, "credits_screen.png");
 		
+		// Set the preferred screen size to the same as the background, after all this image
+		// should be the same size as the desired screen.
+		ScreenSizeManager.getInstance().setPrefferedScreenSize(m_bmpMenuImage.getWidth(), 
+						m_bmpMenuImage.getHeight());
+
 		m_bmpLevelPickImage = loadBitmap(assetManager, "pick_level.png");
 		
 		m_bmpExpBar = new Bitmap[MAX_EXP_SPRITES];
@@ -157,24 +170,13 @@ public class BitmapContainer
 		if(m_gameLogo != null && !m_gameLogo.isRecycled())
 			m_gameLogo.recycle();
 		
-		if(m_levelBackgroundGround != null && !m_levelBackgroundGround.isRecycled())
-			m_levelBackgroundGround.recycle();
-		
-		if(m_levelBackgroundSky != null && !m_levelBackgroundSky.isRecycled())
-			m_levelBackgroundSky.recycle();
 		
 		for(int i = 0; i < m_bmpExpBar.length; i++)
 		{
 			if(m_bmpExpBar[i] != null && !m_bmpExpBar[i].isRecycled())
 				m_bmpExpBar[i].recycle();
 		}
-		/*
-		for(int i = 0; i < m_bmpCreatureStages.length; i++)
-		{
-			if(m_bmpCreatureStages[i] != null && m_bmpCreatureStages[i].isRecycled())
-				m_bmpCreatureStages[i].recycle();
-		}
-		*/
+		
 		if(m_bmpMenuImage != null && m_bmpMenuImage.isRecycled())
 			m_bmpMenuImage.recycle();
 
@@ -212,30 +214,12 @@ public class BitmapContainer
 	{
 		return m_gameStartMenu;
 	}
-	public Bitmap getAreaBackgroundSky()
-	{
-		return m_levelBackgroundSky;
-	}
-	public Bitmap getAreaBackgroundGround()
-	{
-		return m_levelBackgroundGround;
-	}
 	
 	public Bitmap getLevelPick()
 	{
 		return m_bmpLevelPickImage;
 	}
 	
-	public int getMaxPlayerSprites()
-	{
-		return MAX_CREATURE_STAGES;
-	}
-	
-	public Bitmap[] getPlayerSprites()
-	{
-		return m_bmpCreatureStages;
-	}
-
 	public Bitmap[] getExpBarSprites()
 	{
 		return m_bmpExpBar;

@@ -35,6 +35,26 @@ import android.media.MediaPlayer;
 import android.media.SoundPool;
 
 /**
+ * Code created by the Game Developers Guild. Any derivative work must contain 
+ * a copy of the source code and this comments. 
+ * 
+ * It would be nice if you add the official GDG splash to derivative work but not 
+ * required.
+ * 
+ * 
+ * Code Licensed under CC Attribution 3.0 Unported as found on this 
+ * page: http://creativecommons.org/licenses/by/3.0/legalcode  
+ * 
+ * 
+ * @author Game Developers Guild
+ * Site: www.GameDevelopersGuild.com
+ * Twitter: @GameDevGuild
+ * Facebook: www.facebook.com/GameDevelopersGuild
+ * Facebook: www.facebook.com/GameLoopMagazine
+ */
+
+
+/**
  * Game class taken from Donald E. Llopis workshop on android 
  * game development. Modified for the purpose of this game. 
  * 
@@ -223,11 +243,6 @@ public class Game
 	public int getTitleMusicID()
 	{
 		return m_nTitle_screen_music;
-	}
-	
-	public Bitmap getAreaBackgroundSky()
-	{
-		return BitmapContainer.getInstance().getAreaBackgroundSky();
 	}
 	
 	public static Context getGameContext()
